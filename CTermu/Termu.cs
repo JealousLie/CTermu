@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CTermu
 {
-    class CTermu
+    class Termu
     {
     }
 }
