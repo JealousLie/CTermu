@@ -10,8 +10,8 @@ namespace CTermu
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Git");
-            Console.ReadLine();
+            Termu term = new Termu();
+            term.Idle(ConsoleKey.B);
         }
     }
 }
