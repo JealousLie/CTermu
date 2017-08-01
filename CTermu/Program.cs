@@ -10,6 +10,9 @@ namespace CTermu
     {
         static void Main(string[] args)
         {
+            MenuSystem ms = new MenuSystem();
+            Console.WriteLine(ms.Options);
+
             Console.WriteLine("Hello Git");
             Console.ReadLine();
         }

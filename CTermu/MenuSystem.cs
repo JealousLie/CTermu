@@ -9,7 +9,7 @@ namespace CTermu
     class MenuSystem
     {
         public string Question { get; set; }
-        public string[] Options { get; set; } = { "test" };
+        public string[] Options { get; set; } = { "yes", "no" };
         public int MaxWidth { get; set; }
         public int MaxHeight { get; set; }
     }
