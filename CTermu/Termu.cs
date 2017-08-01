@@ -30,7 +30,6 @@ namespace CTermu
 
         private void ChangeMode()
         {
-
         }
 
         public string[] Help()
