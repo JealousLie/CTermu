@@ -8,5 +8,9 @@ namespace CTermu
 {
     class Termu
     {
+        public Termu()
+        {
+
+        }
     }
 }
