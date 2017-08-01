@@ -10,7 +10,7 @@ namespace CTermu
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Git");
+            Console.WriteLine("Hello Github");
             Console.ReadLine();
         }
     }
