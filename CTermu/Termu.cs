@@ -10,6 +10,8 @@ namespace CTermu
     {
         public Termu()
         {
+            Config.CheckConfig();
+            AwaitCommand();
         }
 
         /// <summary>
@@ -28,6 +30,11 @@ namespace CTermu
             }
         }
 
+        public void AwaitCommand()
+        {
+
+        }
+
         private void ChangeMode()
         {
         }
@@ -35,6 +42,11 @@ namespace CTermu
         public string[] Help()
         {
             return new string[0];
+        }
+
+        private bool CheckIfFirstTime()
+        {
+            return true;
         }
     }
 }

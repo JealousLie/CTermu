@@ -10,8 +10,8 @@ namespace CTermu
     {
         static void Main(string[] args)
         {
-            MenuSystem ms = new MenuSystem();
-            Console.WriteLine(ms.Options);
+            Termu term = new Termu();
+
 
             Console.WriteLine("Hello Git");
             Console.ReadLine();
