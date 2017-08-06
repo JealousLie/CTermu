@@ -34,7 +34,7 @@ namespace CTermu
         {
             while (true)
             {
-                Console.Write("$ ");
+                Console.Write(Environment.CurrentDirectory + " $ ");
                 string command = Console.ReadLine();
                 string command_main = command.Split(new char[] { ' ' }).First();
                 string[] arguments = command.Split(new char[] { ' ' }).Skip(1).ToArray();
@@ -64,7 +64,10 @@ namespace CTermu
         private static Dictionary<string, Action<string[]>> CommandList = new Dictionary<string, Action<string[]>>
         {
             { "help", Help },
-            { "echo", Commands.Echo}
+            { "echo", Commands.Echo },
+            { "exit", Commands.Exit },
+            { "cd", Commands.ChangeDirectory },
+            { "ls", Commands.List }
         };
     }
 }
