@@ -11,9 +11,6 @@ namespace CTermu
         static void Main(string[] args)
         {
             Termu term = new Termu();
-
-
-            Console.WriteLine("Hello Git");
             Console.ReadLine();
         }
     }

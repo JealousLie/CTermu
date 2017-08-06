@@ -32,21 +32,39 @@ namespace CTermu
 
         public void AwaitCommand()
         {
-
+            while (true)
+            {
+                Console.Write("$ ");
+                string command = Console.ReadLine();
+                string command_main = command.Split(new char[] { ' ' }).First();
+                string[] arguments = command.Split(new char[] { ' ' }).Skip(1).ToArray();
+                if (CommandList.ContainsKey(command_main))
+                {
+                    Action<string[]> function_to_execute = null;
+                    CommandList.TryGetValue(command_main, out function_to_execute);
+                    function_to_execute(arguments);
+                }
+                else
+                {
+                    Console.WriteLine("Command '" + command_main + "' is not a valid command.");
+                }
+            }
         }
 
-        private void ChangeMode()
+        private static void Help(string[] args)
         {
+            // Implement Help Function
         }
 
-        public string[] Help()
-        {
-            return new string[0];
-        }
+        
 
-        private bool CheckIfFirstTime()
+        /// <summary>
+        /// Eine Wörterbuch, welches einen String und die dazugehörige Funktion beschreibt.
+        /// </summary>
+        private static Dictionary<string, Action<string[]>> CommandList = new Dictionary<string, Action<string[]>>
         {
-            return true;
-        }
+            { "help", Help },
+            { "echo", Commands.Echo}
+        };
     }
 }
