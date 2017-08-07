@@ -50,5 +50,10 @@ namespace CTermu
                 Console.WriteLine(dicFile);
             }
         }
+
+        public static void Clear(string[] args)
+        {
+            Console.Clear();
+        }
     }
 }

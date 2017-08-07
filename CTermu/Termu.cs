@@ -53,7 +53,11 @@ namespace CTermu
 
         private static void Help(string[] args)
         {
-            // Implement Help Function
+            Console.WriteLine("Available commands: ");
+            foreach (string item in CommandList.Keys)
+            {
+                Console.WriteLine("- " + item);
+            }
         }
 
         
@@ -67,7 +71,8 @@ namespace CTermu
             { "echo", Commands.Echo },
             { "exit", Commands.Exit },
             { "cd", Commands.ChangeDirectory },
-            { "ls", Commands.List }
+            { "ls", Commands.List },
+            { "clear", Commands.Clear }
         };
     }
 }
