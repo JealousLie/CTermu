@@ -10,6 +10,22 @@ namespace CTermu
     // Enhält alle Methoden, welche im privaten Dictionary 'CommandList' aufgeführt sind.
     public static class Commands
     {
+        private static Config _Configuration;
+        private static Config Configuration
+        {
+            get { return _Configuration; }
+            set
+            {
+                if(value == null)
+                {
+                    throw new NullReferenceException();
+                }
+                else
+                {
+                    _Configuration = value;
+                }
+            }
+        }
         public static void Echo(string[] args)
         {
             foreach (string item in args)
@@ -33,21 +49,32 @@ namespace CTermu
             }
             catch (IOException)
             {
+                Console.ForegroundColor = Configuration.ErrorColor;
                 Console.WriteLine("Target Device/Directory didn't respond!");
+                Console.ResetColor();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Console.WriteLine("Permission denied");
             }
         }
 
+        // Needs further implementation. Like "ls -l" which prints out size, date/time last modified and filename
         public static void List(string[] args)
         {
             foreach (string item in Directory.GetDirectories(Environment.CurrentDirectory))
             {
+                Console.ForegroundColor = Config.FolderColor;
                 string directory = item.Split(new string[] { @"\" }, StringSplitOptions.None).Last().ToString();
                 Console.WriteLine(directory);
+                Console.ResetColor();
             }
             foreach (string item in Directory.GetFiles(Environment.CurrentDirectory))
             {
+                Console.ForegroundColor = Config.FileColor;
                 string dicFile = item.Split(new string[] { @"\" }, StringSplitOptions.None).Last().ToString();
                 Console.WriteLine(dicFile);
+                Console.ResetColor();
             }
         }
 

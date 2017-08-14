@@ -7,12 +7,31 @@ using System.IO;
 
 namespace CTermu
 {
-    public static class Config
+    public class Config
     {
+        public Config() : this(ConsoleColor.Red, ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Blue, ConsoleColor.Magenta, @"C:\Program Files\CTermu\Config.termu")
+        {
+        }
+        public Config(ConsoleColor error, ConsoleColor warning, ConsoleColor info, ConsoleColor folder, ConsoleColor file) : this(error, warning, info, folder, file,
+            @"C:\Program Files\CTermu\Config.termu")
+        {
+        }
+        public Config(ConsoleColor error, ConsoleColor warning, ConsoleColor info, ConsoleColor folder, ConsoleColor file, string configPath)
+        {
+            ErrorColor = error;
+            WarningColor = warning;
+            InfoColor = info;
+            FolderColor = folder;
+            FileColor = file;
+            ConfigPath = configPath;
+        }
         // Console color specificatoin
-        public static ConsoleColor ErrorColor { get; private set; }
-        public static ConsoleColor WarningColor { get; private set; }
-        public static ConsoleColor InfoColor { get; set; }
+        public ConsoleColor ErrorColor { get; private set; }     // Red
+        public ConsoleColor WarningColor { get; private set; }   // Yellow
+        public ConsoleColor InfoColor { get; set; }              // Green
+        public ConsoleColor FolderColor { get; set; }
+        public ConsoleColor FileColor { get; set; }
+        public string ConfigPath { get; private set; }
 
         public static string Path { get; private set; }
 
@@ -38,6 +57,7 @@ namespace CTermu
 
         private static void CreateConfig()
         {
+            // Implement creation of configuration
         }
     }
 }
