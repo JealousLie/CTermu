@@ -49,9 +49,9 @@ namespace CTermu
             }
             catch (IOException)
             {
-                Console.ForegroundColor = Configuration.ErrorColor;
+                //Console.ForegroundColor = Configuration.ErrorColor;
                 Console.WriteLine("Target Device/Directory didn't respond!");
-                Console.ResetColor();
+                //Console.ResetColor();
             }
             catch (UnauthorizedAccessException)
             {
@@ -64,17 +64,17 @@ namespace CTermu
         {
             foreach (string item in Directory.GetDirectories(Environment.CurrentDirectory))
             {
-                Console.ForegroundColor = Configuration.FolderColor;
+                //Console.ForegroundColor = Configuration.FolderColor;
                 string directory = item.Split(new string[] { @"\" }, StringSplitOptions.None).Last().ToString();
                 Console.WriteLine(directory);
-                Console.ResetColor();
+                //Console.ResetColor();
             }
             foreach (string item in Directory.GetFiles(Environment.CurrentDirectory))
             {
-                Console.ForegroundColor = Configuration.FileColor;
+                //Console.ForegroundColor = Configuration.FileColor;
                 string dicFile = item.Split(new string[] { @"\" }, StringSplitOptions.None).Last().ToString();
                 Console.WriteLine(dicFile);
-                Console.ResetColor();
+                //Console.ResetColor();
             }
         }
 
