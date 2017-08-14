@@ -64,14 +64,14 @@ namespace CTermu
         {
             foreach (string item in Directory.GetDirectories(Environment.CurrentDirectory))
             {
-                Console.ForegroundColor = Config.FolderColor;
+                Console.ForegroundColor = Configuration.FolderColor;
                 string directory = item.Split(new string[] { @"\" }, StringSplitOptions.None).Last().ToString();
                 Console.WriteLine(directory);
                 Console.ResetColor();
             }
             foreach (string item in Directory.GetFiles(Environment.CurrentDirectory))
             {
-                Console.ForegroundColor = Config.FileColor;
+                Console.ForegroundColor = Configuration.FileColor;
                 string dicFile = item.Split(new string[] { @"\" }, StringSplitOptions.None).Last().ToString();
                 Console.WriteLine(dicFile);
                 Console.ResetColor();
