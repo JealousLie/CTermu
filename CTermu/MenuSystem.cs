@@ -40,12 +40,20 @@ namespace CTermu
 
             }
             Console.WriteLine(menuWidth);
-            string line = new string('-', menuWidth);
+            string line = new string('-', menuWidth +4);
             string space = new string(' ', menuWidth - Question.Length);
             Console.WriteLine(space);
-            Console.WriteLine( "{0}\n|{1}{3}|\n{0}", line, Question, space);
+            Console.WriteLine(line+ "\n| " + Question + space + " |\n" + line);
+            
+            for (int i = 0; i < Options.Length; i++)
+            {
+                string temp = Options[i];
+                string spaceO = new string(' ', menuWidth - temp.Length);
+                Console.Write("> " + Options[i] + spaceO + " |\n");
+            }
+            Console.WriteLine(line);
             Console.ReadKey();
-        }   
+        }     
         */
 
 
