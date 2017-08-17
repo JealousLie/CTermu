@@ -8,17 +8,17 @@ namespace CTermu
 {
     class MenuSystem
     {
-        /*
-        public string Question { get; set; } = { "Bildskalierung ändern?" };
+        
+        public string Question { get; set; } = "Bildskalierung ändern?";
         public string[] Options { get; set; } = { "yes", "no" };
         public int MaxWidth { get; set; }
         public int MaxHeight { get; set; }
         
 
-        /////////////////////////////////////
+        /////////////////////////
         // Test Aufbau                     //
         // Verbesserungswürdig :)          //
-        /////////////////////////////////////
+        /////////////////////////
 
         static void Main(string[] args)
         {
@@ -54,7 +54,7 @@ namespace CTermu
             Console.WriteLine(line);
             Console.ReadKey();
         }     
-        */
+        
 
 
 

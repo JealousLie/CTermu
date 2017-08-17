@@ -8,10 +8,10 @@ namespace CTermu
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Termu term = new Termu();
-            Console.ReadLine();
-        }
+        //static void Main(string[] args)
+        //{
+        //    Termu term = new Termu();
+        //    Console.ReadLine();
+        //}
     }
 }
